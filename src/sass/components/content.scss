@@ -1,0 +1,52 @@
+@use "../vars/vars" as *;
+
+.content{
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	&__error{
+		font-size: 1.5rem;
+	}
+	&__box{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 250px;
+		width: 250px;
+		padding-bottom: 3rem;
+		margin: 1rem;
+		border: 3px solid $primary-color;
+		border-radius: 17px;
+		color: $text-color;
+		cursor: pointer;
+		@media screen and (max-width: 680px) {
+			width: 80%;
+		}
+		&-title{
+			height: 50px;
+			max-width: 500px;
+			font:{
+				size: 1.5rem;
+				family: 'Roboto Condensed', sans-serif;
+				weight: 400;
+			}
+		}
+		&-img{
+			height: 250px;
+			width: 250px;
+			object-fit: cover;
+			object-position: center;
+			border-top-left-radius: 17px;
+			border-top-right-radius: 17px;
+			@media screen and (max-width: 680px) {
+			width: 100%;
+		}
+		}
+		&:hover{
+			filter: brightness(115%);
+		}
+	}
+}

@@ -1,0 +1,49 @@
+@use "../vars/vars" as *;
+
+
+
+.search-bar{
+	width: 750px;
+	margin: 0 auto;
+	margin-top: 50px;
+	@media screen and (max-width: 780px ) {
+			width: 90%;
+		}
+	.field{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 2px solid $primary-color;
+		&__input{
+		width: 100%;
+		font:{
+			size: 2.2rem;
+			family: 'Roboto Condensed', sans-serif;
+		}
+		border: none;
+		outline: none;
+		background: none;	
+		color: $text-color;
+		&::placeholder{
+			color: #ddd;
+		}
+	}
+		&__btn{
+		font-size: 1.5rem;
+		cursor: pointer;
+		transition: transform .2s ease-in;
+		color: $text-color;
+		&:hover{
+			transform: scale(1.2);
+			}
+		}
+	}
+	&__title{
+		font:{
+			size: 2.1rem;
+			family: 'Roboto Condensed', sans-serif;
+		}
+		margin: 50px 0;
+		color: $text-color;
+	}
+}
