@@ -19,13 +19,11 @@ function App() {
      if(check){
       setSearchResults(JSON.parse(check))
     }else{
-      await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&includeIngredients=${ingredientName}&sort=popularity&diet=vegan`)
-        .then(res=>res.json())
-        .then(data=>{
-          setSearchResults(data.results)
-          localStorage.setItem(ingredientName, JSON.stringify(data.results))
-        })
-        .catch(e=>setSearchResults([]))
+      const api =await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&includeIngredients=${ingredientName}&sort=popularity&diet=vegan`)
+      const data = await api.json()
+
+      setSearchResults(data.results)
+      localStorage.setItem(ingredientName, JSON.stringify(data.results))
     }
   }
 
